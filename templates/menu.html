@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Food</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- header or navbar  -->
+    <header>
+        <nav class="navbar section-content">
+            <a href="{{ url_for('home') }}" class="navbar-logo">
+                <h2 class="logo-text">Tasty Food</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('menu') }}" class="nav-link">Menu</a>
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+   <!-- menu section -->
+<section class="menu-section">
+    <h2 class="section-title">Our Menu</h2>
+    <div class="section-content">
+        <ul class="menu-list">
+            <!-- Burger -->
+            <li class="menu-item">
+                <img src="{{ url_for('static', filename='images/menu-img1.jpg') }}" alt="" class="menu-image">
+                <p class="menu-name">Burger</p>
+                <p class="menu-description">A juicy beef patty topped with fresh lettuce, tomato, and cheese in a soft bun.</p>
+                <p class="menu-price">$10.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Burger', 10.99)">Add to Cart</button>
+            </li>
+            <!-- Steak -->
+            <li class="menu-item">
+                <img src="{{ url_for('static', filename='images/menu-img2.jpg') }}" alt="" class="menu-image">
+                <p class="menu-name">Steak</p>
+                <p class="menu-description">Grilled to perfection, served with a side of mashed potatoes and vegetables.</p>
+                <p class="menu-price">$12.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Steak', 12.99)">Add to Cart</button>
+            </li>
+            <!-- Sushi -->
+            <li class="menu-item">
+                <img src="{{ url_for('static', filename='images/menu-img3.jpg') }}" alt="" class="menu-image">
+                <p class="menu-name">Sushi</p>
+                <p class="menu-description">Freshly prepared sushi with a variety of fish and vegetables wrapped in seaweed.</p>
+                <p class="menu-price">$8.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Sushi', 8.99)">Add to Cart</button>
+            </li>
+            <!-- Sandwich -->
+            <li class="menu-item">
+                <img src="{{ url_for('static', filename='images/menu-img4.jpeg') }}" alt="" class="menu-image">
+                <p class="menu-name">Sandwich</p>
+                <p class="menu-description">A tasty sandwich filled with crispy chicken, lettuce, and mayo.</p>
+                <p class="menu-price">$14.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Sandwich', 14.99)">Add to Cart</button>
+            </li>
+            <!-- Alfredo Pasta -->
+            <li class="menu-item">
+                <img src="{{ url_for('static', filename='images/menu-img5.jpg') }}" alt="" class="menu-image">
+                <p class="menu-name">Alfredo Pasta</p>
+                <p class="menu-description">Creamy Alfredo sauce paired with fettuccine pasta, topped with Parmesan cheese.</p>
+                <p class="menu-price">$9.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Alfredo Pasta', 9.99)">Add to Cart</button>
+            </li>
+            <!-- Dynamite Prawn -->
+            <li class="menu-item">
+                <img src="{{ url_for('static', filename='images/menu-img6.jpg') }}" alt="" class="menu-image">
+                <p class="menu-name">Dynamite Prawn</p>
+                <p class="menu-description">Crispy prawns coated in a spicy, creamy sauce for a flavor explosion.</p>
+                <p class="menu-price">$11.99</p>
+                <button class="add-to-cart-btn" onclick="addToCart('Dynamite Prawn', 11.99)">Add to Cart</button>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- Cart Modal (hidden by default) -->
+<div id="cart-modal" class="cart-modal">
+    <div class="cart-modal-content">
+        <h3>Your Cart</h3>
+        <ul id="cart-items-list"></ul>
+        <p id="cart-total">Total: $0.00</p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="closeCart()">Close</button>
+    </div>
+</div>
+
+
+    <!-- footer section -->
+    <footer class="footer-section">
+        <div class="section-content">
+            <p class="copyright-text">copyright@ 2024 tasty food</p>
+            <div class="social-link-list">
+                <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="policy-text">
+                <a href="#" class="policy-link">Privacy Policy</a>
+                <span class="separator">.</span>
+                <a href="#" class="policy-link">Refund Policy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

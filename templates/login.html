@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tasty Food</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='images/background.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="{{ url_for('home') }}" class="navbar-logo">
+                <h2 class="logo-text">Tasty Food</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('menu') }}" class="nav-link">Menu</a>
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <br><br><br><br><br><br><br><br>
+    <main>
+        <div class="login-form-container">
+            <h2>Login</h2>
+            <form method="POST">
+                <div class="input-group">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                {% if error %}
+                <p class="error-message">{{ error }}</p>
+                {% endif %}
+                <button type="submit" class="btn-submit">Login</button>
+                <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+            </form>
+        </div>        
+    </main>
+    <br><br><br><br><br><br>
+
+    <footer class="footer-section">
+        <div class="section-content">
+            <div class="social-link-list">
+                <a href="" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="copyright-text">&copy; 2024 Tasty Food</p>
+            <p class="policy-text">
+                <a href="" class="policy-link">Privacy Policy</a>
+                <span class="separator">.</span>
+                <a href="" class="policy-link">Refund Policy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Food</title>
+    <!-- import icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- link swiper link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+       
+
+        .about-section{
+            background-image: url('{{ url_for('static', filename='images/background3.jpg') }}');
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+        }
+
+        .about-details{
+            backdrop-filter: blur(8px); 
+            padding: 10px;
+        }
+
+        .white{
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- header or navbar -->
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="navbar-logo">
+                <h2 class="logo-text">Tasty Food</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item">
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+                    <a href="{{ url_for('menu') }}" class="nav-link">Menu</a>
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                    <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+                    <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+                </li>
+            </ul>
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+    <!-- about section -->
+    <section class="about-section">
+
+        <div class="section-content">
+            <div class="about-image-wrapper">
+                <img src="{{ url_for('static', filename='images/about-img1.jpeg') }}" alt="about" class="about-image">
+            </div>
+            <div class="about-details">
+                <h2 class="section-title white">About Us</h2>
+                <p class="text white">Welcome to our restaurant, where culinary excellence meets passion and tradition. Founded by Shayan, Habib, Umer and Affan, we aim to offer an unforgettable dining experience. With a shared love for food and a vision to create a space that brings people together, our team is dedicated to serving delicious dishes made from the finest ingredients. Whether you're here for a casual meal or a special celebration, we ensure every bite is a testament to our commitment to quality and flavor. Join us and experience the warmth, hospitality, and unforgettable tastes that define our story.</p>
+                <div class="social-link-list">
+                    <a href="" class="social-link white"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" class="social-link white"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="" class="social-link white"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section -->
+    <footer class="footer-section">
+        <div class="section-content">
+            <p class="copyright-text">copyright@ 2024 tasty food</p>
+            <div class="social-link-list">
+                <a href="" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p class="policy-text">
+                <a href="" class="policy-link">Privacy Policy</a>
+                <span class="separator">.</span>
+                <a href="" class="policy-link">Refund Policy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
